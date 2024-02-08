@@ -1,0 +1,39 @@
+@import 'colors';
+
+.table-overflow-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  border-radius: 6px;
+  border: 1px solid $white;
+  border-collapse: separate;
+  overflow: hidden;
+  width: 100%;
+}
+
+.cdk-header-row {
+  background-color: $white;
+  font-weight: bolder;
+}
+
+.cdk-row:nth-child(odd) {
+  background-color: $black;
+}
+
+.cdk-row:nth-child(even) {
+  background-color: $white;
+}
+
+.cdk-header-cell,
+.cdk-cell {
+  padding: 14px 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cdk-cell {
+  color: $black;
+}

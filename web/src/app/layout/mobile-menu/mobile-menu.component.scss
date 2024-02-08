@@ -1,0 +1,67 @@
+@import 'colors';
+@import 'mixins';
+
+.overlay {
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease-in-out;
+
+  &.show {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+.menu-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+  margin-top: 80px;
+
+  &.show {
+    pointer-events: all;
+  }
+
+  .menu {
+    background-color: $dark-black;
+    border: 2px solid $medium-black;
+    width: calc(100% - 40px - 4px);
+    overflow: hidden;
+    max-width: 576px;
+    height: auto;
+    transform: translateY(-140%);
+    transition: transform 0.35s ease-in-out;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 20px 8px 20px;
+    padding: 8px 0;
+
+    &.show {
+      transform: translateY(0);
+    }
+
+    a {
+      color: $gray;
+      padding: 14px 0;
+      font-size: 12px;
+      font-weight: bolder;
+      border-bottom: 1px solid $medium-black;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

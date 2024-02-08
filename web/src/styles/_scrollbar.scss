@@ -1,0 +1,35 @@
+@import 'colors';
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: $black;
+  border: 0px none transparent;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $black;
+}
+::-webkit-scrollbar-thumb:active {
+  background: $black;
+}
+::-webkit-scrollbar-track {
+  background: $black;
+  border: 0px none transparent;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: $black;
+}
+::-webkit-scrollbar-track:active {
+  background: $black;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

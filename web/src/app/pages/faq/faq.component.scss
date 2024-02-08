@@ -1,0 +1,68 @@
+@import 'colors';
+
+:host {
+  display: block;
+  min-height: calc(100vh - 286px);
+  margin-bottom: 60px;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+
+    .questions {
+      width: calc(60% - 30px);
+
+      .faq-item {
+        border: 2px solid $medium-black;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 40px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .header {
+          padding: 20px 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: $primary;
+          font-weight: bolder;
+          cursor: pointer;
+          gap: 60px;
+        }
+
+        .body {
+          padding: 20px 40px;
+          display: block;
+          overflow: hidden;
+
+          &.active {
+            border-top: 2px solid $medium-black;
+          }
+        }
+      }
+    }
+
+    .col-right {
+      position: relative;
+      width: calc(40% - 30px);
+      border: 2px solid $primary;
+      border-radius: 20px;
+
+      .faq-text {
+        font-size: 120px;
+        font-family: 'Oxanium', cursive;
+        font-weight: 600;
+        transform: rotate(90deg);
+        color: $primary;
+        position: absolute;
+        right: calc(50% - 150px);
+        top: calc(50% - 60px);
+        letter-spacing: 20px;
+      }
+    }
+  }
+}

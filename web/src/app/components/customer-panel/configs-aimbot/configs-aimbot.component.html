@@ -1,0 +1,186 @@
+<form [formGroup]="form" class="settings-panel">
+  <h1>Group settings</h1>
+  <swiper [config]="swiperConfig">
+    <ng-template swiperSlide>
+      <div class="option-block first">
+        <xo-key-selector
+          label="Keybind 1"
+          [value]="form.controls.keyBind1.value"
+          (onSelectKey)="form.controls.keyBind1.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+        <xo-key-selector
+          label="Keybind 2"
+          (onSelectKey)="form.controls.keyBind2.setValue($event)"
+          [isDisabled]="!canEdit"
+          [value]="form.controls.keyBind2.value"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+        <xo-key-selector
+          label="Disable key"
+          [value]="form.controls.disableKey.value"
+          (onSelectKey)="form.controls.disableKey.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+        <xo-slider-input
+          label="Smooth percentage (%)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.smoothPercentage.value"
+          (valueChange)="form.controls.smoothPercentage.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+
+        <label class="form-label">Aim method</label>
+        <xo-switch
+          label="Off-target application"
+          formControlName="offTargetApplication"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+
+        <label class="form-label">Hitboxes</label>
+        <div class="option flex-space-between mb-0">
+          <xo-checkbox
+            label="Head"
+            formControlName="head"
+            [isDisabled]="!canEdit"
+            [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+          ></xo-checkbox>
+          <xo-checkbox
+            label="Body"
+            formControlName="body"
+            [isDisabled]="!canEdit"
+            [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+          ></xo-checkbox>
+        </div>
+
+        <div class="option flex-space-between mb-0">
+          <xo-checkbox
+            label="Arms"
+            formControlName="arms"
+            [isDisabled]="!canEdit"
+            [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+          ></xo-checkbox>
+          <xo-checkbox
+            label="Legs"
+            formControlName="legs"
+            [isDisabled]="!canEdit"
+            [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+          ></xo-checkbox>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <div class="option-block middle">
+        <xo-slider-input
+          label="Initial activation delay (ms)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.initialActivationDelay.value"
+          (valueChange)="form.controls.initialActivationDelay.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+        <xo-slider-input
+          label="Next activation delay (ms)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.nextActivationDelay.value"
+          (valueChange)="form.controls.nextActivationDelay.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+        <xo-slider-input
+          label="Maximum aimtime (ms)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.maximumAimtime.value"
+          (valueChange)="form.controls.maximumAimtime.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+        <xo-slider-input
+          label="Maximum FOV (deg)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.maximumFov.value"
+          (valueChange)="form.controls.maximumFov.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+        <xo-slider-input
+          label="Recoil compensation (%)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.recoilCompensation.value"
+          (valueChange)="form.controls.recoilCompensation.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <div class="option-block last">
+        <label class="form-label">On acquire new target</label>
+        <xo-switch
+          label="Reset activation delay"
+          formControlName="resetActivationDelay"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Off-target application"
+          formControlName="offTargetApplication"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+
+        <label class="form-label">Sanity checks</label>
+        <xo-switch
+          label="Local player on ground"
+          formControlName="localPlayerOnGround"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Auto-switch target"
+          formControlName="autoSwitchTarget"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Opposite target check"
+          formControlName="oppositeTargetCheck"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+
+        <xo-slider-input
+          label="Maximum flash alpha (%)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.maximumFlashAlpha.value"
+          (valueChange)="form.controls.maximumFlashAlpha.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+
+        <xo-slider-input
+          label="Maximum velocity (units)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.maximumVelocity.value"
+          (valueChange)="form.controls.maximumVelocity.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+      </div>
+    </ng-template>
+  </swiper>
+</form>

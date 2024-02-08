@@ -1,0 +1,21 @@
+<div class="dialog-wrapper">
+  <form [formGroup]="form" class="dialog-content">
+    <button type="button" class="close" (click)="dialogRef.close()">
+      <xo-icon icon="close-square" color="white" [size]="33"></xo-icon>
+    </button>
+    <a class="brand mb-4" routerLink="/">
+      <img src="./assets/images/logo.png" alt="XOAim" />
+    </a>
+
+    <input type="text" class="form-control mb-3" placeholder="Username" formControlName="username" xoAutofocus />
+    <input type="password" class="form-control mb-3" placeholder="Password" formControlName="password" (keyup.enter)="signIn()" />
+
+    <p *ngIf="loginError" class="form-error">
+      <xo-icon icon="error" color="danger" [size]="18" [offset]="3"></xo-icon>
+      <span>Invalid username or password...</span>
+    </p>
+
+    <a routerLink="/forgot-password" class="mb-4" (click)="dialogRef.close()">Forgot password?</a>
+    <button type="button" class="btn btn-rounded ml-auto" (click)="signIn()" [disabled]="form.invalid">Sign in</button>
+  </form>
+</div>

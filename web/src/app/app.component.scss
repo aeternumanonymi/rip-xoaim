@@ -1,0 +1,26 @@
+main {
+  padding-bottom: 60px;
+}
+
+section {
+  min-height: calc(100vh - 57px);
+  padding-top: 60px;
+}
+
+.no-scroll {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}

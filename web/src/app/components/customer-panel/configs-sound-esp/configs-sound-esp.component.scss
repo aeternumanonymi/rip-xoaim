@@ -1,0 +1,78 @@
+@import 'colors';
+@import 'mixins';
+
+.settings-panel {
+  display: grid;
+  gap: 0;
+  position: relative;
+
+  @include mobile() {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  h1 {
+    font-family: 'Oxanium', cursive;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: $white;
+    border-bottom: 1px dashed $medium-black;
+    padding-bottom: 14px;
+
+    @include desktop() {
+      display: none;
+    }
+  }
+
+  .option-block {
+    flex: 1;
+
+    @include desktop() {
+      &.first {
+        border-right: 1px dashed $medium-black;
+        padding-right: 40px;
+      }
+
+      &.middle {
+        padding-left: 40px;
+        padding-right: 40px;
+        border-right: 1px dashed $medium-black;
+      }
+
+      &.last {
+        padding-left: 40px;
+      }
+    }
+
+    .form-label {
+      font-size: 11px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      font-weight: bolder;
+      font-size: 12px;
+
+      &.flex-space-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .btn {
+      border: 2px solid $medium-black;
+      color: $primary;
+      width: 100%;
+      justify-content: center;
+      font-size: 12px;
+
+      &:hover {
+        border-color: $primary;
+      }
+    }
+  }
+}

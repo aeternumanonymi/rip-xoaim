@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  cursor: pointer;
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+
+    xo-icon {
+      margin-right: 8px;
+    }
+
+    &.is-disabled {
+      opacity: 0.5;
+    }
+  }
+}

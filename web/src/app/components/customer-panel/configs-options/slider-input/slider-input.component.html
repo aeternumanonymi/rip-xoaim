@@ -1,0 +1,11 @@
+<label class="form-label">{{ label }}</label>
+<div class="option option-slider">
+  <xo-slider
+    [minValue]="minValue"
+    [maxValue]="maxValue"
+    [isDisabled]="isDisabled"
+    [value]="value"
+    (onRangeChange)="onValueChange($event)"
+  ></xo-slider>
+  <input type="number" class="form-control" [(ngModel)]="value" (ngModelChange)="onValueChange()" [disabled]="isDisabled" />
+</div>

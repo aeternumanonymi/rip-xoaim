@@ -1,0 +1,9 @@
+<app-header></app-header>
+<form [formGroup]="form">
+  <input type="text" class="form-control mb-3" placeholder="Username" formControlName="username" autofocus />
+  <input type="password" class="form-control mb-3" placeholder="Password" formControlName="password" (keyup.enter)="login()" />
+  <a class="mb-4" (click)="openForgotPassword()">Forgot password?</a>
+  <button type="button" class="btn btn-rounded ml-auto" (click)="login()" [disabled]="form.invalid">
+    Sign in
+  </button>
+</form>

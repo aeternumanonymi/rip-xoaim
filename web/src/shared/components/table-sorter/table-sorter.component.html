@@ -1,0 +1,12 @@
+<div class="sorter" (click)="sort()">
+  <ng-content></ng-content>
+  <div class="icon-sort">
+    <ng-container *ngIf="sortByField === currentField && sortByDirection !== ''">
+      <!--
+      TODO: Fix icons
+      <fa-icon [icon]="iconUp" *ngIf="sortByDirection === 'ASC'"></fa-icon>
+      <fa-icon [icon]="iconDown" *ngIf="sortByDirection === 'DESC'"></fa-icon>
+      -->
+    </ng-container>
+  </div>
+</div>

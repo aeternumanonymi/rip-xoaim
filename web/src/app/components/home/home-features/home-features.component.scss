@@ -1,0 +1,54 @@
+@import 'colors';
+
+:host {
+  display: block;
+  margin-bottom: 60px;
+  position: relative;
+
+  .features {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+
+    .slide-item {
+      border: 2px solid $medium-black;
+      border-radius: 40px;
+      width: 100%;
+      padding: 40px 60px;
+
+      h1 {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 18px;
+        font-family: 'Oxanium', cursive;
+        font-weight: 600;
+        color: $primary;
+        letter-spacing: 6px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        line-height: 33px;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .btn {
+        display: flex;
+        gap: 8px;
+        border: 2px solid $medium-black;
+        max-width: 240px;
+        justify-content: center;
+        color: $primary;
+        letter-spacing: 2px;
+        font-size: 11px;
+        padding: 10px 0;
+
+        &:hover {
+          border-color: $primary;
+        }
+      }
+    }
+  }
+}

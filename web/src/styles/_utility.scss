@@ -1,0 +1,159 @@
+@import 'colors';
+
+.text-danger {
+  color: $danger;
+}
+
+.text-success {
+  color: $success;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.fw-normal {
+  font-weight: normal;
+}
+
+.fw-bolder {
+  font-weight: bolder;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+// Define spacing values
+$spacing-values: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+  auto: auto,
+) !default;
+
+// Margin, Padding, and Utility Classes
+@each $size, $value in $spacing-values {
+  // Margin
+  .m-#{$size} {
+    margin: #{$value} !important;
+  }
+
+  // Padding
+  .p-#{$size} {
+    padding: #{$value} !important;
+  }
+
+  // Margin Horizontal
+  .mx-#{$size} {
+    margin-left: #{$value} !important;
+    margin-right: #{$value} !important;
+  }
+
+  // Margin Vertical
+  .my-#{$size} {
+    margin-top: #{$value} !important;
+    margin-bottom: #{$value} !important;
+  }
+
+  // Margin Top
+  .mt-#{$size} {
+    margin-top: #{$value} !important;
+  }
+
+  // Margin Bottom
+  .mb-#{$size} {
+    margin-bottom: #{$value} !important;
+  }
+
+  // Margin Left
+  .ml-#{$size} {
+    margin-left: #{$value} !important;
+  }
+
+  // Margin Right
+  .mr-#{$size} {
+    margin-right: #{$value} !important;
+  }
+
+  // Padding Horizontal
+  .px-#{$size} {
+    padding-left: #{$value} !important;
+    padding-right: #{$value} !important;
+  }
+
+  // Padding Vertical
+  .py-#{$size} {
+    padding-top: #{$value} !important;
+    padding-bottom: #{$value} !important;
+  }
+
+  // Padding Top
+  .pt-#{$size} {
+    padding-top: #{$value} !important;
+  }
+
+  // Padding Bottom
+  .pb-#{$size} {
+    padding-bottom: #{$value} !important;
+  }
+
+  // Padding Left
+  .pl-#{$size} {
+    padding-left: #{$value} !important;
+  }
+
+  // Padding Right
+  .pr-#{$size} {
+    padding-right: #{$value} !important;
+  }
+}
+
+// Additional utility classes
+.m-auto {
+  margin: auto !important;
+}
+
+.p-auto {
+  padding: auto !important;
+}
+
+// Display
+.d-none {
+  display: none !important;
+}
+.d-inline {
+  display: inline !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-table {
+  display: table !important;
+}
+.d-table-row {
+  display: table-row !important;
+}
+.d-table-cell {
+  display: table-cell !important;
+}
+.d-flex {
+  display: flex !important;
+}
+.d-inline-flex {
+  display: inline-flex !important;
+}

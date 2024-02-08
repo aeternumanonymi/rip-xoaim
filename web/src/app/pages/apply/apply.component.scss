@@ -1,0 +1,68 @@
+@import 'colors';
+
+:host {
+  display: block;
+  min-height: calc(100vh - 286px);
+  margin-bottom: 60px;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    min-height: calc(100vh - (156px + 74px));
+
+    .content {
+      width: calc(60% - 30px);
+      padding: 40px;
+      border: 2px solid $medium-black;
+      border-radius: 20px;
+
+      h1 {
+        font-size: 21px;
+        font-family: 'Oxanium', cursive;
+        font-weight: 600;
+        color: $primary;
+        letter-spacing: 2px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        line-height: 24px;
+      }
+
+      .btn {
+        border: 2px solid $medium-black;
+        color: $primary;
+
+        &:hover {
+          border-color: $primary;
+        }
+      }
+    }
+
+    .col-right {
+      position: relative;
+      width: calc(40% - 30px);
+      border: 2px solid $primary;
+      border-radius: 20px;
+
+      .apply-text {
+        font-size: 120px;
+        font-family: 'Oxanium', cursive;
+        font-weight: 600;
+        transform: rotate(90deg);
+        color: $primary;
+        position: absolute;
+        right: calc(50% - (150px + 75px));
+        top: calc(50% - 60px);
+        letter-spacing: 20px;
+      }
+    }
+  }
+}

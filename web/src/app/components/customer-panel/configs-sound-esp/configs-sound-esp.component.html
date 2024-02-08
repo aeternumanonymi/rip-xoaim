@@ -1,0 +1,86 @@
+<form [formGroup]="form" class="settings-panel">
+  <h1>Group settings</h1>
+  <swiper [config]="swiperConfig" (slideChange)="onSlideChange($event)">
+    <ng-template swiperSlide>
+      <div class="option-block first">
+        <xo-key-selector
+          label="Keybind 1"
+          (onSelectKey)="form.controls.keyBind1.setValue($event)"
+          [isDisabled]="!canEdit"
+          [value]="form.controls.keyBind1.value"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+
+        <xo-key-selector
+          class="d-block mb-3"
+          label="Keybind 2"
+          [value]="form.controls.keyBind2.value"
+          (onSelectKey)="form.controls.keyBind2.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+
+        <xo-key-selector
+          label="Disable key"
+          (onSelectKey)="form.controls.disableKey.setValue($event)"
+          [value]="form.controls.disableKey.value"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+
+        <xo-switch
+          label="Always active (no key)"
+          formControlName="alwaysActive"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+
+        <xo-switch
+          label="Non-visible players only"
+          formControlName="nonVisiblePlayersOnly"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <div class="option-block middle">
+        <xo-slider-input
+          label="Maximum FOV (deg)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.maximumFov.value"
+          (valueChange)="form.controls.maximumFov.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+
+        <xo-slider-input
+          label="Volume level (%)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.volumeLevel.value"
+          (valueChange)="form.controls.volumeLevel.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <div class="option-block last">
+        <div class="option">
+          <button
+            type="button"
+            class="btn btn-sm"
+            [disabled]="!canEdit"
+            [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+          >
+            Change sound effect
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </swiper>
+</form>

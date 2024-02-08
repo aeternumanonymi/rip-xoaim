@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="sidebar">
+      <nav>
+        <a routerLink="/documentation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <xo-icon icon="general" color="primary" [size]="21" [offset]="5"></xo-icon>
+          General
+        </a>
+        <a routerLink="/documentation/subscription" routerLinkActive="active">
+          <xo-icon icon="dollar-square" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Subscription
+        </a>
+        <a routerLink="/documentation/aimbot" routerLinkActive="active">
+          <xo-icon icon="aimbot" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Aimbot
+        </a>
+        <a routerLink="/documentation/triggerbot" routerLinkActive="active">
+          <xo-icon icon="stopwatch" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Triggerbot
+        </a>
+        <a routerLink="/documentation/utility" routerLinkActive="active">
+          <xo-icon icon="movement" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Utility
+        </a>
+        <a routerLink="/documentation/idler" routerLinkActive="active">
+          <xo-icon icon="idler" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Idler
+        </a>
+      </nav>
+    </div>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

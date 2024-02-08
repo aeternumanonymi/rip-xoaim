@@ -1,0 +1,65 @@
+<header class="container">
+  <div class="navbar">
+    <a class="brand" routerLink="/">
+      <img src="./assets/images/logo.png" alt="XOAim" class="logo-desktop" />
+      <img src="./assets/images/logo-sm.png" alt="XOAim" class="logo-mobile" />
+      <p class="slug">Boost your performance</p>
+      <p class="brand-name">XOAim.com</p>
+    </a>
+    <div class="actions">
+      <nav>
+        <button class="btn btn-login py-0" (click)="openLogin()" *ngIf="!isLoggedIn">
+          <xo-icon icon="login" color="primary" [size]="24" [offset]="5"></xo-icon>
+          Sign in
+        </button>
+        <button class="btn btn-user px-0 py-0" [dropdownTriggerFor]="dropdown" *ngIf="isLoggedIn">
+          <xo-icon icon="masks" color="primary" [size]="33" [offset]="5" class="mr-2"></xo-icon>
+          <span>{{ me?.username || '' }}</span>
+          <xo-icon icon="caret-down" color="primary" [size]="24" [offset]="5"></xo-icon>
+        </button>
+        <button class="btn btn-menu px-0 py-0" (click)="toggleMobileMenu()">
+          <xo-icon icon="menu" color="white" [size]="24" [offset]="5"></xo-icon>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <nav class="navbar-items">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/cpanel" routerLinkActive="active" *ngIf="isLoggedIn">Customer Panel</a>
+    <a routerLink="/documentation" routerLinkActive="active">Documentation</a>
+    <a routerLink="/faq" routerLinkActive="active">FAQ</a>
+    <a routerLink="/apply" routerLinkActive="active">Apply</a>
+  </nav>
+</header>
+
+<xo-dropdown #dropdown>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" routerLink="/cpanel">
+      <xo-icon icon="dashboard" color="primary" [size]="16" [offset]="5"></xo-icon>
+      Dashboard
+    </a>
+    <a class="dropdown-item" routerLink="/cpanel/configs">
+      <xo-icon icon="pen-square" color="primary" [size]="16" [offset]="5"></xo-icon>
+      Configs
+    </a>
+    <a class="dropdown-item" routerLink="/cpanel/configs">
+      <xo-icon icon="time-square" color="primary" [size]="16" [offset]="5"></xo-icon>
+      Idler
+    </a>
+    <a class="dropdown-item" routerLink="/cpanel/subscription">
+      <xo-icon icon="money-bag" color="primary" [size]="16" [offset]="5"></xo-icon>
+      Subscription
+    </a>
+    <a class="dropdown-item" routerLink="/cpanel/settings">
+      <xo-icon icon="settings" color="primary" [size]="16" [offset]="5"></xo-icon>
+      Settings
+    </a>
+    <a class="dropdown-item" (click)="logOut()">
+      <xo-icon icon="sign-out" color="primary" [size]="16" [offset]="5"></xo-icon>
+      Sign out
+    </a>
+  </div>
+</xo-dropdown>
+
+<xo-mobile-menu></xo-mobile-menu>

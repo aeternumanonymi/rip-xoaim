@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="sidebar">
+      <nav>
+        <a routerLink="/cpanel" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <xo-icon icon="dashboard" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Dashboard
+        </a>
+        <a routerLink="/cpanel/configs" routerLinkActive="active">
+          <xo-icon icon="pen-square" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Configs
+        </a>
+        <a routerLink="/cpanel/radar" routerLinkActive="active">
+          <xo-icon icon="pen-square" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Radar
+        </a>
+        <a routerLink="/cpanel/idler" routerLinkActive="active">
+          <xo-icon icon="time-square" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Idler
+        </a>
+        <a routerLink="/cpanel/subscription" routerLinkActive="active">
+          <xo-icon icon="money-bag" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Subscription
+        </a>
+        <a routerLink="/cpanel/download" routerLinkActive="active">
+          <xo-icon icon="download-square" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Download
+        </a>
+        <a routerLink="/cpanel/settings" routerLinkActive="active">
+          <xo-icon icon="settings" color="primary" [size]="21" [offset]="5"></xo-icon>
+          Settings
+        </a>
+      </nav>
+    </div>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

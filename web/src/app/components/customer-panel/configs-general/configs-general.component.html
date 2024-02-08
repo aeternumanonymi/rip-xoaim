@@ -1,0 +1,127 @@
+<form [formGroup]="form" class="settings-panel">
+  <h1>Group settings</h1>
+  <swiper [config]="swiperConfig" (slideChange)="onSlideChange($event)">
+    <ng-template swiperSlide>
+      <div class="option-block first">
+        <xo-key-selector
+          label="Toggle key"
+          [isDisabled]="!canEdit"
+          (onSelectKey)="form.controls.toggleKey.setValue($event)"
+          [value]="form.controls.toggleKey.value"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+        <xo-key-selector
+          label="Exit key"
+          [isDisabled]="!canEdit"
+          (onSelectKey)="form.controls.exitKey.setValue($event)"
+          [value]="form.controls.exitKey.value"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+
+        <xo-slider-input
+          label="Notifications' volume (%)"
+          [minValue]="0"
+          [maxValue]="100"
+          [value]="form.controls.notificationsVolume.value"
+          (valueChange)="form.controls.notificationsVolume.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-slider-input>
+
+        <div class="option">
+          <button
+            type="button"
+            class="btn btn-sm"
+            [disabled]="!canEdit"
+            [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+          >
+            Manage notifications
+          </button>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="option-block middle">
+        <xo-switch
+          label="Aimbot"
+          formControlName="aimbot"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Triggerbot"
+          formControlName="triggerbot"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Sound ESP"
+          formControlName="soundEsp"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Bunnyhop"
+          formControlName="bunnyhop"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Autoknife"
+          formControlName="autoknife"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Autostop"
+          formControlName="autostop"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="option-block last">
+        <xo-switch
+          label="Auto-kill blockers"
+          formControlName="autoKillBlockers"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Disable networking"
+          formControlName="disableNetworking"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+        <xo-switch
+          label="Load config from file"
+          formControlName="loadConfigFromFile"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-switch>
+
+        <div class="option">
+          <button
+            type="button"
+            class="btn btn-sm"
+            [disabled]="!canEdit"
+            [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+          >
+            Restore defaults
+          </button>
+        </div>
+        <div class="option">
+          <button
+            type="button"
+            class="btn btn-sm"
+            [disabled]="!canEdit"
+            [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+          >
+            Export as a file
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </swiper>
+</form>

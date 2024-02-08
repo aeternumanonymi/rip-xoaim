@@ -1,0 +1,48 @@
+@import 'colors';
+
+:host {
+  display: block;
+  min-height: calc(100vh - 286px);
+
+  .row {
+    display: flex;
+    gap: 40px;
+
+    .block {
+      flex: 1;
+    }
+  }
+
+  .block {
+    border: 2px solid $medium-black;
+    padding: 33px 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+
+    h1 {
+      font-size: 18px;
+      border-bottom: 1px dashed $medium-black;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: $primary;
+      font-weight: bolder;
+    }
+
+    .highlight {
+      color: $primary;
+      font-weight: bolder;
+    }
+
+    .btn {
+      border: 2px solid $medium-black;
+      color: $primary;
+
+      &:hover {
+        border-color: $primary;
+      }
+    }
+  }
+}

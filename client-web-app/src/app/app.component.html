@@ -1,0 +1,6 @@
+<main [class.login]="route === 'login'" [class.loading]="route === 'loading'">
+  <div class="inner">
+    <app-login *ngIf="route === 'login'"></app-login>
+    <app-loading *ngIf="route === 'loading'"></app-loading>
+  </div>
+</main>

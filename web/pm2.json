@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "xoaim-web",
+      "script": "./dist/xoaim-web/server/main.js",
+      "cwd": "C:/work/xoaim/web",
+      "watch": true,
+      "env": {
+        "PORT": "1634"
+      }
+    }
+  ]
+}

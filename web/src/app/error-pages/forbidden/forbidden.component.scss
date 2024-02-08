@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  min-height: calc(100vh - 82px);
+  padding-top: 24vh;
+  text-align: center;
+
+  h1 {
+    font-family: 'Oxanium', cursive;
+    font-weight: bold;
+    font-size: 120px;
+  }
+
+  h2 {
+    font-family: 'Oxanium', cursive;
+  }
+}

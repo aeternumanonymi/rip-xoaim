@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="questions">
+      <div class="faq-item" *ngFor="let q of questions">
+        <div class="header" (click)="toggleQuestionExpand(q)">
+          <h1>{{ q.title }}</h1>
+          <button type="button">
+            <xo-icon icon="angle-left" color="primary" [size]="32" [offset]="0" *ngIf="!q.expanded"></xo-icon>
+            <xo-icon icon="angle-down" color="primary" [size]="32" [offset]="5" *ngIf="q.expanded"></xo-icon>
+          </button>
+        </div>
+        <div class="body" [@expandCollapse]="q.expanded" [class.active]="q.expanded">
+          {{ q.body }}
+        </div>
+      </div>
+    </div>
+    <div class="col-right">
+      <h1 class="faq-text">FAQ</h1>
+    </div>
+  </div>
+</div>

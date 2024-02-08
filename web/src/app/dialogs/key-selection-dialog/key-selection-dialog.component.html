@@ -1,0 +1,20 @@
+<div class="dialog-wrapper">
+  <div class="dialog-content">
+    <button type="button" class="close" (click)="dialogRef.close()">
+      <xo-icon icon="close-square" color="white" [size]="33"></xo-icon>
+    </button>
+
+    <label class="form-label">Select a key</label>
+    <xo-select
+      [options]="keys"
+      valueField="value"
+      nameField="label"
+      [(ngModel)]="selectedKeyValue"
+      [hasSearch]="true"
+      placeholder="Select a key..."
+      class="mb-4"
+    ></xo-select>
+
+    <button type="button" class="btn btn-rounded btn-save ml-auto" (click)="saveKey()">Save</button>
+  </div>
+</div>

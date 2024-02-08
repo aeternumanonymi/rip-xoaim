@@ -1,0 +1,24 @@
+// Core
+@import "reset";
+@import "colors";
+@import "utility";
+@import "form";
+@import "buttons";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 200;
+  background-color: $dark-black;
+  color: $white;
+  margin: 0;
+  user-select: none;
+}
+
+input {
+  user-select: auto;
+}

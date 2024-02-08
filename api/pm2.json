@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "xo-api",
+      "script": "./dist/main.js",
+      "cwd": "./domeenid/www.evenux.ee/xo-api",
+      "watch": false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<div class="checkbox" [class.is-disabled]="isDisabled" (click)="toggle()">
+  <xo-icon icon="checkbox-unchecked" color="primary" [size]="24" [offset]="4" *ngIf="!checked"></xo-icon>
+  <xo-icon icon="checkbox-check" color="primary" [size]="24" [offset]="4" *ngIf="checked"></xo-icon>
+  {{ label }}
+</div>

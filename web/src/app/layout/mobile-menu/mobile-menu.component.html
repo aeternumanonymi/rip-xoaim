@@ -1,0 +1,12 @@
+<div class="overlay" [class.show]="isMenuOpen" (click)="toggleMenu()"></div>
+<div class="menu-wrapper" [class.show]="isMenuOpen">
+  <div class="menu" [class.show]="isMenuOpen">
+    <a routerLink="/">Home</a>
+    <a routerLink="/cpanel" *ngIf="!!me">Customer Panel</a>
+    <a routerLink="/documentation">Documentation</a>
+    <a routerLink="/faq">Frequently Asked Questions</a>
+    <a routerLink="/apply">Apply for membership</a>
+    <a routerLink="/admin/dashboard" *ngIf="!!me && me.role === 'admin'">Admin</a>
+    <a (click)="openLogin()">Sign in</a>
+  </div>
+</div>

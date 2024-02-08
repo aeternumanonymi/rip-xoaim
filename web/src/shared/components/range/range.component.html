@@ -1,0 +1,27 @@
+<p class="mb-4">Selected range: {{ smaller }} - {{ larger }}</p>
+
+<div class="slider">
+  <div class="progress" [style.left.%]="left" [style.right.%]="right"></div>
+</div>
+<div class="range-input">
+  <input
+    type="range"
+    class="range-min"
+    [min]="floor"
+    [max]="ceil"
+    [value]="rangeMin"
+    [step]="step"
+    [(ngModel)]="rangeMin"
+    (ngModelChange)="onChange()"
+  />
+  <input
+    type="range"
+    class="range-max"
+    [min]="floor"
+    [max]="ceil"
+    [value]="rangeMax"
+    [step]="step"
+    [(ngModel)]="rangeMax"
+    (ngModelChange)="onChange()"
+  />
+</div>

@@ -1,0 +1,18 @@
+<xo-customer-layout>
+  <div class="block">
+    <h1>Welcome, <span class="highlight">Mozquito</span>!</h1>
+    <p *ngIf="false">You do not have an active subscription, <a routerLink="/subscription">click here</a> to subscribe.</p>
+    <p>Your subscription ends in <span class="highlight">16 day(s)</span> on <span class="highlight">21st October, 2023</span>.</p>
+  </div>
+
+  <div class="row">
+    <div class="block">
+      <h1>Active config</h1>
+      <xo-select [options]="configs" valueField="id" nameField="name" placeholder="Select config"></xo-select>
+    </div>
+    <div class="block">
+      <h1>Subscription</h1>
+      <button type="button" class="btn">Subscribe</button>
+    </div>
+  </div>
+</xo-customer-layout>

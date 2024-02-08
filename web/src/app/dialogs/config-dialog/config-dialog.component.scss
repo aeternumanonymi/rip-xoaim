@@ -1,0 +1,49 @@
+@import 'colors';
+@import 'mixins';
+
+h5 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 21px;
+}
+
+.dialog-content {
+  padding: 60px 60px 40px 60px;
+  position: relative;
+  width: 100%;
+
+  @include mobile() {
+    padding: 100px 40px 80px 40px;
+  }
+
+  .brand {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    .brand-name {
+      font-family: 'Oxanium', cursive;
+      color: $primary;
+      letter-spacing: 3px;
+      font-size: 21px;
+      font-weight: 500;
+    }
+  }
+
+  a {
+    display: block;
+    font-size: 13px;
+  }
+
+  .btn {
+    border: 2px solid $primary;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,65 @@
+@import 'colors';
+@import 'mixins';
+
+h1 {
+  font-size: 36px;
+  font-family: 'Oxanium', cursive;
+  font-weight: 600;
+  color: $primary;
+  letter-spacing: 6px;
+  margin-bottom: 20px;
+
+  @include mobile() {
+    margin-bottom: 20px;
+  }
+}
+
+p {
+  line-height: 33px;
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.about {
+  display: flex;
+  position: relative;
+  margin-bottom: 60px;
+  gap: 80px;
+
+  @include mobile() {
+    padding: 40px 20px;
+    border-radius: 20px;
+  }
+
+  .description {
+    border: 2px solid $medium-black;
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  .info {
+    flex: 1;
+
+    .feature {
+      border-bottom: 1px dashed $medium-black;
+      margin-bottom: 20px;
+    }
+  }
+
+  h5 {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bolder;
+    font-family: 'Oxanium', cursive;
+    gap: 12px;
+    letter-spacing: 2px;
+  }
+
+  img {
+    height: 540px;
+  }
+}

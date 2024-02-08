@@ -1,0 +1,162 @@
+<xo-customer-layout>
+  <div class="select-row">
+    <div class="select-col">
+      <h1>
+        Current config
+        <button type="button" class="btn btm-sm px-0 py-0" (click)="openCreateConfigDialog()">
+          <xo-icon icon="plus" color="primary" [size]="33" [offset]="3"></xo-icon>
+          New
+        </button>
+      </h1>
+      <div class="row">
+        <xo-select
+          [options]="configs"
+          [nameField]="'name'"
+          [valueField]="'id'"
+          [(ngModel)]="selectedConfigValue"
+          (ngModelChange)="onSelectConfig()"
+          [ngModelOptions]="{ standalone: true }"
+          [placeholder]="'Select a config'"
+        ></xo-select>
+        <div class="buttons">
+          <button
+            type="button"
+            class="btn px-2 py-2"
+            (click)="openEditConfigDialog()"
+            [disabled]="!selectedConfig"
+            [xoTooltip]="!selectedConfig ? 'Select a config first!' : ''"
+          >
+            <xo-icon icon="pen" color="primary" [size]="14" [offset]="5" class="px-2"></xo-icon>
+            <span class="d-block pr-4">Edit</span>
+          </button>
+          <button
+            type="button"
+            class="btn px-2 py-0"
+            (click)="openDeleteConfigDialog()"
+            [disabled]="!selectedConfig"
+            [xoTooltip]="!selectedConfig ? 'Select a config first!' : ''"
+          >
+            <xo-icon icon="trash-bin" color="primary" [size]="18" [offset]="5" class="px-2"></xo-icon>
+            <span class="d-block pr-4">Delete</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="select-col">
+      <h1>
+        Weapon group
+        <button
+          type="button"
+          class="btn btm-sm px-0 py-0"
+          (click)="openCreateWeaponGroupDialog()"
+          [disabled]="!selectedConfig"
+          [xoTooltip]="!selectedConfig ? 'Select a config first!' : ''"
+        >
+          <xo-icon icon="plus" color="primary" [size]="33" [offset]="3"></xo-icon>
+          New
+        </button>
+      </h1>
+      <div class="row">
+        <xo-select
+          [options]="weaponGroups"
+          [nameField]="'name'"
+          [valueField]="'id'"
+          [(ngModel)]="selectedWeaponGroupValue"
+          (ngModelChange)="onSelectWeaponGroup()"
+          [ngModelOptions]="{ standalone: true }"
+          [placeholder]="'Select a weapon group'"
+          [isDisabled]="!selectedConfig"
+          [xoTooltip]="!selectedConfig ? 'Select a config first!' : ''"
+        ></xo-select>
+
+        <div class="buttons">
+          <button
+            type="button"
+            class="btn px-2 py-2"
+            (click)="openEditWeaponGroupDialog()"
+            [disabled]="!selectedWeaponGroup"
+            [xoTooltip]="!selectedWeaponGroup ? 'Select a weapon group first!' : ''"
+          >
+            <xo-icon icon="pen" color="primary" [size]="14" [offset]="5" class="px-2"></xo-icon>
+            <span class="d-block ml-4">Edit</span>
+          </button>
+          <button
+            type="button"
+            class="btn px-2 py-2"
+            (click)="openDeleteWeaponGroupDialog()"
+            [disabled]="!selectedWeaponGroup"
+            [xoTooltip]="!selectedWeaponGroup ? 'Select a weapon config first!' : ''"
+          >
+            <xo-icon icon="trash-bin" color="primary" [size]="18" [offset]="5" class="px-2"></xo-icon>
+            <span class="d-block ml-4">Delete</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <xo-select
+    [options]="configTabs"
+    [selectedValue]="currentTab"
+    nameField="name"
+    valueField="value"
+    placeholder="Select a config tab..."
+    (optionSelected)="selectTab($event)"
+    class="tab-select mb-3"
+  ></xo-select>
+
+  <div class="feature-tabs">
+    <nav>
+      <button
+        type="button"
+        class="btn"
+        [class.active]="currentTab === tab.value"
+        *ngFor="let tab of configTabs"
+        (click)="selectTab(tab.value)"
+      >
+        {{ tab.name }}
+      </button>
+    </nav>
+
+    <xo-configs-general
+      *ngIf="currentTab === 'general'"
+      [canEdit]="!!selectedConfig && !!selectedWeaponGroup"
+      [config]="selectedWeaponGroup?.config?.general"
+      (onConfigChange)="updateConfigProperty('general', $event)"
+    ></xo-configs-general>
+    <xo-configs-aimbot
+      *ngIf="currentTab === 'aimbot'"
+      [canEdit]="!!selectedConfig && !!selectedWeaponGroup"
+      [config]="selectedWeaponGroup?.config?.aimbot"
+      (onConfigChange)="updateConfigProperty('aimbot', $event)"
+    ></xo-configs-aimbot>
+    <xo-configs-triggerbot
+      *ngIf="currentTab === 'triggerbot'"
+      [canEdit]="!!selectedConfig && !!selectedWeaponGroup"
+      [config]="selectedWeaponGroup?.config?.triggerbot"
+      (onConfigChange)="updateConfigProperty('triggerbot', $event)"
+    ></xo-configs-triggerbot>
+    <xo-configs-utility
+      *ngIf="currentTab === 'utility'"
+      [canEdit]="!!selectedConfig && !!selectedWeaponGroup"
+      [config]="selectedWeaponGroup?.config?.utility"
+      (onConfigChange)="updateConfigProperty('utility', $event)"
+    ></xo-configs-utility>
+    <xo-configs-sound-esp
+      *ngIf="currentTab === 'sound-esp'"
+      [canEdit]="!!selectedConfig && !!selectedWeaponGroup"
+      [config]="selectedWeaponGroup?.config?.soundEsp"
+      (onConfigChange)="updateConfigProperty('soundEsp', $event)"
+    ></xo-configs-sound-esp>
+    <!--
+    <xo-configs-rules
+      *ngIf="currentTab === 'rules'"
+      [canEdit]="!!selectedConfig && !!selectedWeaponGroup"
+      (onConfigChange)="updateConfigProperty('rules', $event)"
+    ></xo-configs-rules>
+    -->
+  </div>
+
+  <button type="button" class="btn btn-rounded btn-save ml-auto" (click)="saveConfig()">Save config</button>
+</xo-customer-layout>

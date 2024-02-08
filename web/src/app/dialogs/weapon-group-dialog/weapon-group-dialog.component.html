@@ -1,0 +1,43 @@
+<form [formGroup]="form" class="dialog-wrapper">
+  <div class="dialog-content">
+    <button type="button" class="close" (click)="dialogRef.close()">
+      <xo-icon icon="close-square" color="white" [size]="33"></xo-icon>
+    </button>
+
+    <label class="form-label">Config name</label>
+    <input type="text" class="form-control mb-3" placeholder="Enter a name..." formControlName="name" xoAutofocus />
+
+    <label class="form-label">Weapon group</label>
+    <xo-select
+      [options]="groups"
+      [nameField]="'name'"
+      [valueField]="'id'"
+      [(ngModel)]="selectedGroupValue"
+      (ngModelChange)="onSelectGroup()"
+      [ngModelOptions]="{ standalone: true }"
+      [placeholder]="'Select a weapon group'"
+      class="mb-4"
+    ></xo-select>
+
+    <div class="weapons">
+      <div class="weapon-container" *ngFor="let weapon of selectedGroup.weapons">
+        <xo-checkbox
+          [label]="weapon.name"
+          [(ngModel)]="weapon.selected"
+          [ngModelOptions]="{ standalone: true }"
+          (ngModelChange)="onWeaponSelectionChange(weapon)"
+        ></xo-checkbox>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p class="help">
+        <span>{{ selectedWeaponIds.length }}</span> weapon(s) selected...
+      </p>
+
+      <button type="button" class="btn btn-rounded btn-create ml-auto" (click)="submit()">
+        {{ isCreate ? 'Create' : 'Save' }}
+      </button>
+    </div>
+  </div>
+</form>

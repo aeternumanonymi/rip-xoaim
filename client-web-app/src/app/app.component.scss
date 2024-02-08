@@ -1,0 +1,23 @@
+@import "colors";
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  &.login {
+    width: 600px;
+    height: 350px;
+  }
+
+  &.loading {
+    width: 600px;
+    height: 160px;
+  }
+
+  .inner {
+    width: 70%;
+  }
+}

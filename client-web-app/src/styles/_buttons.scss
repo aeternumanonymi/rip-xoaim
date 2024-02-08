@@ -1,0 +1,35 @@
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  font-weight: bolder;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
+
+  &.btn-sm {
+    padding: 8px 24px;
+    font-size: 13px;
+  }
+
+  &.btn-xs {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  &.btn-block {
+    width: 100%;
+    text-align: center;
+  }
+
+  &.btn-rounded {
+    border-radius: 999px;
+  }
+}

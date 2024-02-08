@@ -1,0 +1,37 @@
+// 3rd party
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+// 3rd part extension
+@import 'swiper';
+@import 'dialog';
+@import 'material';
+
+// Core
+@import 'reset';
+@import 'colors';
+@import 'utility';
+@import 'form';
+@import 'buttons';
+@import 'layout';
+@import 'scrollbar';
+@import 'dropdown';
+@import 'tables';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 200;
+  font-size: 14px;
+  background-color: $dark-black;
+  color: $white;
+  margin: 0;
+}
+
+// Hide font pre-load
+body:not(.font-loaded) {
+  visibility: hidden;
+}

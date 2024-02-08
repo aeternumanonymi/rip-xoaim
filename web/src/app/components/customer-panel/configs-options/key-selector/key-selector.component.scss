@@ -1,0 +1,38 @@
+@import 'colors';
+
+.option {
+  margin-bottom: 16px;
+  font-weight: bolder;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .badge {
+    background-color: $black;
+    padding: 7px 14px;
+    display: inline-block;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: $primary;
+    border: 2px solid $medium-black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      border-color: $primary;
+    }
+  }
+}

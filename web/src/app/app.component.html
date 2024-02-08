@@ -1,0 +1,8 @@
+<main [class.no-scroll]="isMobileMenuOpen">
+  <ng-container>
+    <xo-header *ngIf="!isPlainPage"></xo-header>
+    <router-outlet></router-outlet>
+    <xo-footer *ngIf="!isPlainPage"></xo-footer>
+    <xo-mobile-menu *ngIf="!isPlainPage"></xo-mobile-menu>
+  </ng-container>
+</main>

@@ -1,0 +1,20 @@
+@import "colors";
+
+:host {
+  display: block;
+  margin-bottom: 20px;
+
+  a {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+
+    h1 {
+      font-family: "Oxanium", cursive;
+      color: $primary;
+      letter-spacing: 3px;
+      font-size: 21px;
+      font-weight: 500;
+    }
+  }
+}

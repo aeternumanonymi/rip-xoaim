@@ -1,0 +1,40 @@
+<form [formGroup]="form" class="settings-panel">
+  <h1>Group settings</h1>
+  <swiper [config]="swiperConfig" (slideChange)="onSlideChange($event)">
+    <ng-template swiperSlide>
+      <div class="option-block first">
+        <xo-key-selector
+          label="Bunnyhop key"
+          [value]="form.controls.bunnyhopKey.value"
+          (onSelectKey)="form.controls.bunnyhopKey.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <div class="option-block middle">
+        <xo-key-selector
+          label="Autoknife key"
+          [value]="form.controls.autoknifeKey.value"
+          (onSelectKey)="form.controls.autoknifeKey.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <div class="option-block last">
+        <xo-key-selector
+          label="Autostop key"
+          [value]="form.controls.autostopKey.value"
+          (onSelectKey)="form.controls.autostopKey.setValue($event)"
+          [isDisabled]="!canEdit"
+          [xoTooltip]="!canEdit ? 'Select a config and weapon group first!' : ''"
+        ></xo-key-selector>
+      </div>
+    </ng-template>
+  </swiper>
+</form>

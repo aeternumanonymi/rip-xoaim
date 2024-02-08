@@ -1,0 +1,27 @@
+@import 'colors';
+
+footer {
+  display: flex;
+  background-color: $dark-black;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid $medium-black;
+  border-radius: 13px;
+  padding: 20px 40px;
+
+  p {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

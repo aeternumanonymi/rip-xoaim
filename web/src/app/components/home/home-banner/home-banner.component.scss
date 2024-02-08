@@ -1,0 +1,66 @@
+@import 'colors';
+@import 'mixins';
+
+.banner {
+  position: relative;
+  border: 2px solid $medium-black;
+  border-radius: 40px;
+  padding: 60px 110px;
+  margin-bottom: 60px;
+  background-color: $dark-black;
+  background-image: url('/assets/images/landing-banner.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include mobile() {
+    height: auto;
+    padding: 60px 20px;
+    justify-content: flex-start;
+    border-radius: 20px;
+    background-image: none;
+    margin-bottom: 20px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  img {
+    width: 500px;
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 36px;
+    font-family: 'Oxanium', cursive;
+    font-weight: 600;
+    color: $primary;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 6px;
+    margin-bottom: 20px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: $primary;
+    }
+  }
+}

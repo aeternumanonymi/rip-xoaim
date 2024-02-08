@@ -1,0 +1,21 @@
+@import 'colors';
+
+:host {
+  display: block;
+  min-width: 200px;
+  padding: 12px;
+  font-size: 13px;
+  color: $black;
+  background: $white;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-weight: bolder;
+}
+
+:host-context(.top) {
+  margin-bottom: 8px;
+}
+
+:host-context(.bottom) {
+  margin-top: 8px;
+}
